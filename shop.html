@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop – ChronoHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a href="index.html" class="logo">ChronoHub</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="orders.html">My Orders</a>
+      <a href="cart.html">Cart<span class="cart-count">0</span></a>
+      <button class="hamburger" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<section class="section-tight">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Shop</div>
+    <div class="section-head">
+      <h2>All Watches</h2>
+    </div>
+
+    <div class="shop-layout">
+      <aside class="filter-panel">
+        <div class="filter-group">
+          <h3>Category</h3>
+          <label class="filter-option"><input type="checkbox" class="cat-filter" value="Men's" checked> Men's</label>
+          <label class="filter-option"><input type="checkbox" class="cat-filter" value="Women's" checked> Women's</label>
+          <label class="filter-option"><input type="checkbox" class="cat-filter" value="Unisex" checked> Unisex</label>
+          <label class="filter-option"><input type="checkbox" class="cat-filter" value="Smartwatch" checked> Smartwatches</label>
+          <label class="filter-option"><input type="checkbox" class="cat-filter" value="Accessory" checked> Accessories</label>
+        </div>
+        <div class="filter-group">
+          <h3>Price Range</h3>
+          <div class="price-range">
+            <input type="range" id="price-slider" min="500" max="24000" value="24000">
+            <div class="price-range-labels">
+              <span>₱500</span>
+              <span id="price-slider-value">₱24,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <h3>Strap Material</h3>
+          <label class="filter-option"><input type="checkbox" class="strap-filter" value="Leather"> Leather</label>
+          <label class="filter-option"><input type="checkbox" class="strap-filter" value="Metal"> Metal / Bracelet</label>
+          <label class="filter-option"><input type="checkbox" class="strap-filter" value="Silicone"> Silicone</label>
+          <label class="filter-option"><input type="checkbox" class="strap-filter" value="Resin"> Resin</label>
+        </div>
+      </aside>
+
+      <div>
+        <div class="sort-bar">
+          <span id="product-count"></span>
+          <select id="sort-select">
+            <option value="featured">Sort by: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="newest">Newest</option>
+          </select>
+        </div>
+
+        <div id="shop-grid" class="product-grid"></div>
+        <p id="shop-empty" style="display:none;color:var(--ink-soft);padding:40px 0;text-align:center;">No watches match those filters. Try widening your price range or checking more categories.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>ChronoHub</h3>
+        <p>Watches built for daily wear, in the Philippines and beyond. Straps, cases, and movements picked for people who actually use their watch.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <ul class="footer-links">
+          <li><a href="shop.html?category=Men's">Men's</a></li>
+          <li><a href="shop.html?category=Women's">Women's</a></li>
+          <li><a href="shop.html?category=Smartwatch">Smartwatches</a></li>
+          <li><a href="shop.html?category=Accessory">Straps</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Warranty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>About</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="#">Socials</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ChronoHub. Student project, ITElec-1.</span>
+      <span>Visa · Mastercard · GCash · COD</span>
+    </div>
+  </div>
+</footer>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/orders.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

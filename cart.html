@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart – ChronoHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a href="index.html" class="logo">ChronoHub</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="orders.html">My Orders</a>
+      <a href="cart.html">Cart<span class="cart-count">0</span></a>
+      <button class="hamburger" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<section class="section-tight">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Cart</div>
+    <h2>Your Cart</h2>
+
+    <div class="cart-layout">
+      <div>
+        <div id="cart-lines"></div>
+        <p id="cart-empty" style="display:none;color:var(--ink-soft);padding:24px 0;">Your cart is empty. <a href="shop.html" class="btn-text">Go pick something out</a>.</p>
+        <div style="padding-top:22px;">
+          <a href="shop.html" class="btn-text">Continue shopping</a>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <h3 style="font-size:1.1rem;">Order Summary</h3>
+        <div class="summary-row"><span>Subtotal</span><span id="cart-subtotal"></span></div>
+        <div class="summary-row discount-row" id="cart-discount-row" style="display:none;"><span>Discount</span><span id="cart-discount"></span></div>
+        <div class="summary-row"><span>Shipping</span><span id="cart-shipping"></span></div>
+        <div class="promo-row">
+          <input type="text" id="promo-input" placeholder="Promo code">
+          <button type="button" id="promo-apply" class="btn btn-outline" style="padding:10px 16px;">Apply</button>
+        </div>
+        <div id="promo-msg" class="promo-msg"></div>
+        <div class="summary-row total"><span>Total</span><span id="cart-total"></span></div>
+        <a href="checkout.html" id="cart-checkout-link" class="btn btn-primary btn-block" style="margin-top:16px;">Proceed to Checkout</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="section-head"><h2>You may also like</h2></div>
+    <div id="cart-suggestions" class="product-grid"></div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>ChronoHub</h3>
+        <p>Watches built for daily wear, in the Philippines and beyond. Straps, cases, and movements picked for people who actually use their watch.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <ul class="footer-links">
+          <li><a href="shop.html?category=Men's">Men's</a></li>
+          <li><a href="shop.html?category=Women's">Women's</a></li>
+          <li><a href="shop.html?category=Smartwatch">Smartwatches</a></li>
+          <li><a href="shop.html?category=Accessory">Straps</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Warranty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>About</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="#">Socials</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ChronoHub. Student project, ITElec-1.</span>
+      <span>Visa · Mastercard · GCash · COD</span>
+    </div>
+  </div>
+</footer>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/orders.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product – ChronoHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a href="index.html" class="logo">ChronoHub</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="orders.html">My Orders</a>
+      <a href="cart.html">Cart<span class="cart-count">0</span></a>
+      <button class="hamburger" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<section class="section-tight">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span id="pd-breadcrumb-name"></span></div>
+
+    <div class="pd-layout">
+      <div>
+        <div class="pd-gallery-main">
+          <img id="pd-main-image" src="" alt="" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+
+      <div>
+        <div class="product-cat" id="pd-category"></div>
+        <h1 id="pd-name" style="font-size:2rem;"></h1>
+        <div class="pd-price-row">
+          <span class="pd-price" id="pd-price"></span>
+        </div>
+        <p id="pd-description"></p>
+
+        <div class="pd-option-label">Strap</div>
+        <div class="pill-row">
+          <span class="pill selected" id="pd-strap"></span>
+        </div>
+
+        <div class="pd-option-label">Quantity</div>
+        <div class="pd-actions">
+          <div class="qty-stepper">
+            <button type="button" id="pd-qty-minus">−</button>
+            <span id="pd-qty">1</span>
+            <button type="button" id="pd-qty-plus">+</button>
+          </div>
+          <button type="button" id="pd-add-cart" class="btn btn-primary">Add to Cart</button>
+          <button type="button" id="pd-buy-now" class="btn btn-outline">Buy Now</button>
+        </div>
+
+        <ul class="pd-meta-list">
+          <li><span>Brand</span><span id="pd-brand"></span></li>
+          <li><span>Water Resistance</span><span id="pd-water"></span></li>
+          <li><span>Warranty</span><span>1 Year</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Product information">
+      <button type="button" class="active" id="pd-description-tab-button" role="tab" aria-selected="true" aria-controls="pd-description-panel">Description</button>
+      <button type="button" id="pd-reviews-tab-button" role="tab" aria-selected="false" aria-controls="pd-reviews-panel">Reviews</button>
+    </div>
+    <div id="pd-description-panel" role="tabpanel" aria-labelledby="pd-description-tab-button">
+      <p id="pd-description-tab"></p>
+    </div>
+    <div id="pd-reviews-panel" role="tabpanel" aria-labelledby="pd-reviews-tab-button" hidden>
+      <div id="pd-reviews-list" aria-live="polite"></div>
+      <div class="form-block">
+        <h3>Leave a review</h3>
+        <form id="pd-review-form">
+          <div class="field-row">
+            <div class="field">
+              <label for="pd-review-name">Name</label>
+              <input type="text" id="pd-review-name" maxlength="60" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="pd-review-rating">Rating</label>
+              <select id="pd-review-rating" required>
+                <option value="5">5 – Excellent</option>
+                <option value="4">4 – Good</option>
+                <option value="3">3 – Average</option>
+                <option value="2">2 – Below average</option>
+                <option value="1">1 – Poor</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field full">
+              <label for="pd-review-comment">Your review</label>
+              <textarea id="pd-review-comment" rows="4" maxlength="1000" required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit review</button>
+        </form>
+        <p class="review-storage-note">Reviews are saved in this browser for this demo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>You may also like</h2>
+    </div>
+    <div id="related-grid" class="product-grid"></div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>ChronoHub</h3>
+        <p>Watches built for daily wear, in the Philippines and beyond. Straps, cases, and movements picked for people who actually use their watch.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <ul class="footer-links">
+          <li><a href="shop.html?category=Men's">Men's</a></li>
+          <li><a href="shop.html?category=Women's">Women's</a></li>
+          <li><a href="shop.html?category=Smartwatch">Smartwatches</a></li>
+          <li><a href="shop.html?category=Accessory">Straps</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Warranty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>About</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="#">Socials</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ChronoHub. Student project, ITElec-1.</span>
+      <span>Visa · Mastercard · GCash · COD</span>
+    </div>
+  </div>
+</footer>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/orders.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout – ChronoHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a href="index.html" class="logo">ChronoHub</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="orders.html">My Orders</a>
+      <a href="cart.html">Cart<span class="cart-count">0</span></a>
+      <button class="hamburger" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<section class="section-tight">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="cart.html">Cart</a> / Checkout</div>
+    <h2>Checkout</h2>
+
+    <div class="steps-row">
+      <div class="step done"><span class="num">✓</span> Cart</div>
+      <div class="step active"><span class="num">2</span> Shipping & Payment</div>
+      <div class="step"><span class="num">3</span> Complete</div>
+    </div>
+
+    <div class="checkout-layout">
+      <div>
+        <div class="form-block">
+          <h3>Shipping Information</h3>
+          <div class="field-row">
+            <div class="field"><label for="checkout-name">Full Name</label><input type="text" id="checkout-name" placeholder="Juan Dela Cruz"><span class="field-error">This field is required.</span></div>
+            <div class="field"><label for="checkout-phone">Phone Number</label><input type="text" id="checkout-phone" placeholder="09XX XXX XXXX"><span class="field-error">This field is required.</span></div>
+          </div>
+          <div class="field-row">
+            <div class="field full"><label for="checkout-address">Street Address</label><input type="text" id="checkout-address" placeholder="Unit / House No., Street, Barangay"><span class="field-error">This field is required.</span></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="checkout-city">City / Municipality</label><input type="text" id="checkout-city" placeholder="Marilao"><span class="field-error">This field is required.</span></div>
+            <div class="field"><label for="checkout-province">Province</label><input type="text" id="checkout-province" placeholder="Bulacan"><span class="field-error">This field is required.</span></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="checkout-zip">ZIP Code</label><input type="text" id="checkout-zip" placeholder="3019"><span class="field-error">This field is required.</span></div>
+          </div>
+        </div>
+
+        <div class="form-block">
+          <h3>Payment Method</h3>
+          <div class="pay-method">
+            <label><input type="radio" name="pay" value="Card" checked> Card</label>
+            <label><input type="radio" name="pay" value="GCash"> GCash</label>
+            <label><input type="radio" name="pay" value="Cash on Delivery"> Cash on Delivery</label>
+          </div>
+          <div id="card-fields">
+          <div class="field-row">
+            <div class="field full"><label for="checkout-card-number">Card Number</label><input type="text" id="checkout-card-number" placeholder="0000 0000 0000 0000"><span class="field-error">This field is required.</span></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="checkout-card-expiry">Expiry</label><input type="text" id="checkout-card-expiry" placeholder="MM / YY"><span class="field-error">This field is required.</span></div>
+            <div class="field"><label for="checkout-card-cvc">CVC</label><input type="text" id="checkout-card-cvc" placeholder="123"><span class="field-error">This field is required.</span></div>
+          </div>
+          </div>
+          <div id="gcash-fields" style="display:none;">
+            <div class="field-row">
+              <div class="field full"><label for="checkout-gcash-number">GCash Mobile Number</label><input type="text" id="checkout-gcash-number" placeholder="09XX XXX XXXX"><span class="field-error">This field is required.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-block">
+          <h3>Order Notes (optional)</h3>
+          <div class="field-row">
+            <div class="field full"><label for="checkout-notes">Order Notes</label><textarea id="checkout-notes" rows="3" placeholder="Delivery instructions, gift note, etc."></textarea></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <h3 style="font-size:1.1rem;">Order Summary</h3>
+        <div id="checkout-lines"></div>
+        <div class="summary-row"><span>Subtotal</span><span id="checkout-subtotal"></span></div>
+        <div class="summary-row discount-row" id="checkout-discount-row" style="display:none;"><span>Discount</span><span id="checkout-discount"></span></div>
+        <div class="summary-row"><span>Shipping</span><span id="checkout-shipping"></span></div>
+        <div class="summary-row total"><span>Total</span><span id="checkout-total"></span></div>
+        <button type="button" id="place-order-btn" class="btn btn-primary btn-block" style="margin-top:16px; border:none;">Place Order</button>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>ChronoHub</h3>
+        <p>Watches built for daily wear, in the Philippines and beyond. Straps, cases, and movements picked for people who actually use their watch.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <ul class="footer-links">
+          <li><a href="shop.html?category=Men's">Men's</a></li>
+          <li><a href="shop.html?category=Women's">Women's</a></li>
+          <li><a href="shop.html?category=Smartwatch">Smartwatches</a></li>
+          <li><a href="shop.html?category=Accessory">Straps</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Warranty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>About</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="#">Socials</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ChronoHub. Student project, ITElec-1.</span>
+      <span>Visa · Mastercard · GCash · COD</span>
+    </div>
+  </div>
+</footer>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/orders.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
